@@ -10,7 +10,7 @@ float x1, y1, x2, y2;
 float dx, dy, steps, xinc, yinc, x, y;
 int i;
  printf("Enter x1 y1: ");
-scanf("%f %f", &x1, &y1);
+scanf("%f %f", &x1, &y1); 
  printf("Enter x2 y2: ");
 scanf("%f %f", &x2, &y2);
 initgraph(&gd, &gm, "");
@@ -33,7 +33,7 @@ putpixel((int)(x + 0.5), (int)(y + 0.5), WHITE);
 x += xinc;
  y += yinc;
 }
-outtextxy(250,250,"Suhan Dhakal");
+outtextxy(280,280,"Suhan Dhakal");
 getch();
 closegraph();
 return 0;
