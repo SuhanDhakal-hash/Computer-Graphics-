@@ -18,8 +18,12 @@ int main()
 {
     int gd = DETECT, gm;
     initgraph(&gd, &gm, "");
+    circle(300,250,100);
+    boundaryfill(250,250,RED,WHITE);
     rectangle(100, 100, 200, 200);
     boundaryfill(150, 150, WHITE, RED);
+    outtextxy(250,250,"Suhan Dhakal");
+
     getch();
     closegraph();
     return 0;
