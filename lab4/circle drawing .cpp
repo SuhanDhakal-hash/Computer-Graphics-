@@ -43,7 +43,7 @@ int main()
     int xc = 250, yc = 250, r = 200;
 
     midpointCircle(xc, yc, r);
-outtextxy(200,200,"Suhan Dhakal");
+outtextxy(200,200,"Suhan Dhakal ");
 
     getch();
     closegraph();

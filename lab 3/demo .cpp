@@ -1,8 +1,6 @@
 #include <graphics.h>
 #include <conio.h>
 #include <stdio.h>
-
-
 int main() {
     int gd = DETECT, gm;
 
@@ -37,5 +35,4 @@ outtextxy(280,280,"Suhan Dhakal");
 getch();
 closegraph();
 return 0;
-
 }

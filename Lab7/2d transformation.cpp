@@ -45,46 +45,57 @@ int main()
                       (int)(x2 * sx), (int)(y2 * sy));
             break;
         }
+case 3:
+{
+    float angle, rad;
+    int cx, cy;
 
-        case 3:
-        {
-            float angle, rad;
-            int xr, yr;
+    printf("Enter angle of rotation: ");
+    scanf("%f", &angle);
 
-            printf("Enter angle of rotation: ");
-            scanf("%f", &angle);
+    rad = angle * 3.1416 / 180;
 
-            rad = angle * 3.1416 / 180;
+    cx = (x1 + x2) / 2;
+    cy = (y1 + y2) / 2;
 
-            line(x1, y1, x2, y2);
+   rectangle(x1, y1, x2, y2);
 
-            xr = x1 + (int)((x2 - x1) * cos(rad)
-                          - (y2 - y1) * sin(rad));
+    
+    int x[4] = {x1, x2, x2, x1};
+    int y[4] = {y1, y1, y2, y2};
 
-            yr = y1 + (int)((x2 - x1) * sin(rad)
-                          + (y2 - y1) * cos(rad));
+    int rx[4], ry[4];
 
-            line(x1, y1, xr, yr);
-            break;
-        }
+    for(int i = 0; i < 4; i++)
+    {
+        rx[i] = cx + (x[i] - cx) * cos(rad) - (y[i] - cy) * sin(rad);
+        ry[i] = cy + (x[i] - cx) * sin(rad) + (y[i] - cy) * cos(rad);
+    }
+
+    
+    line(rx[0], ry[0], rx[1], ry[1]);
+    line(rx[1], ry[1], rx[2], ry[2]);
+    line(rx[2], ry[2], rx[3], ry[3]);
+    line(rx[3], ry[3], rx[0], ry[0]);
+
+    break;
+}
 
         case 4:
         {
             float shx;
             printf("Enter shearing factor: ");
             scanf("%f", &shx);
-
-            rectangle(x1, y1, x2, y2);
-            rectangle((int)(x1 + shx * y1), y1,
-                      (int)(x2 + shx * y2), y2);
+rectangle(x1, y1, x2, y2);
+ rectangle((int)(x1 + shx * y1), y1,
+(int)(x2 + shx * y2), y2);
             break;
         }
-
-        case 5:
+case 5:
         {
             rectangle(x1, y1, x2, y2);
 
-            /* Reflection about Y-axis */
+            
             rectangle(x2 + 300, y1,
                       x1 + 300, y2);
 
@@ -97,7 +108,7 @@ int main()
             break;
         }
     }
-
+outtextxy (250,250,"Suhan Dhakal ");
     getch();
     closegraph();
 
